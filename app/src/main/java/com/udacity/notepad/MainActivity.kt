@@ -1,16 +1,15 @@
 package com.udacity.notepad
 
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 
 import com.udacity.notepad.crud.CreateActivity
 import com.udacity.notepad.recycler.NotesAdapter
 import com.udacity.notepad.util.SpaceItemDecoration
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -20,10 +19,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.setOnClickListener { startActivity(CreateActivity.get(this@MainActivity)) }
 
         recycler!!.layoutManager = LinearLayoutManager(this)
