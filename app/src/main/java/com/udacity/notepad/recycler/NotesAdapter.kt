@@ -7,11 +7,11 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 
 import com.udacity.notepad.R
 import com.udacity.notepad.data.DataStore
 import com.udacity.notepad.data.Note
+import kotlinx.android.synthetic.main.item_note.view.*
 
 import java.util.ArrayList
 
@@ -59,11 +59,6 @@ class NotesAdapter(private val context: Context) : RecyclerView.Adapter<NotesAda
     }
 
     class NotesViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-        internal var text: TextView
-
-        init {
-            text = itemView.findViewById(R.id.text)
-        }
+        val text = itemView.text
     }
 }
