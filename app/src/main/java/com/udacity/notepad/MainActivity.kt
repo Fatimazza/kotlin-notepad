@@ -23,9 +23,9 @@ class MainActivity : AppCompatActivity() {
 
         fab.setOnClickListener { startActivity(CreateActivity.get(this@MainActivity)) }
 
-        recycler!!.layoutManager = LinearLayoutManager(this)
-        recycler!!.addItemDecoration(SpaceItemDecoration(this, R.dimen.margin_small))
-        recycler!!.adapter = NotesAdapter(this)
+        recycler.layoutManager = LinearLayoutManager(this)
+        recycler.addItemDecoration(SpaceItemDecoration(this, R.dimen.margin_small))
+        recycler.adapter = NotesAdapter(this)
     }
 
     override fun onResume() {
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
     public override fun onDestroy() {
         super.onDestroy()
-        recycler!!.adapter = null
+        recycler.adapter = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -56,6 +56,6 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun refresh() {
-        (recycler!!.adapter as NotesAdapter).refresh()
+        (recycler.adapter as NotesAdapter).refresh()
     }
 }
