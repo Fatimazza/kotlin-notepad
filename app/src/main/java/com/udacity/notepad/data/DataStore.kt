@@ -19,6 +19,6 @@ object DataStore {
     }
 
     fun execute(fn: () -> Unit) {
-        doAsync { fn }
+        doAsync { fn() }
     }
 }
