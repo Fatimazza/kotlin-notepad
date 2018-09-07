@@ -15,6 +15,10 @@ object DataStore {
     }
 
     fun execute(runnable: Runnable) {
-        doAsync { runnable.run() }
+        execute { runnable.run() }
+    }
+
+    fun execute(fn: () -> Unit) {
+        doAsync { fn }
     }
 }
