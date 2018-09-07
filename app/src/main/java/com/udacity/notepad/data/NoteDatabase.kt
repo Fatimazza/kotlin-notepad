@@ -116,7 +116,7 @@ class NoteDatabase(context: Context) {
         return values
     }
 
-    private fun fromNotes(notes: Array<Note>): List<ContentValues> {
+    private fun fromNotes(notes: Array<out Note>): List<ContentValues> {
         val values = ArrayList<ContentValues>()
         for (note in notes) {
             values.add(fromNote(note))
